@@ -1,0 +1,115 @@
+/* Importar tipografías de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Variables CSS requeridas */
+:root {
+    --color-principal: #005b9f; /* Azul turismo */
+    --color-secundario: #fdb813; /* Amarillo sol */
+    --color-acento: #ff6b6b; /* Rojo coral para botones */
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-texto: 'Open Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-texto);
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+}
+
+/* Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-principal);
+    padding: 1rem 5%;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--fuente-titulos);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-reservar {
+    background-color: var(--color-secundario);
+    color: #333 !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Sección Hero */
+.hero {
+    position: relative;
+    height: 70vh;
+    /* Deberás colocar una foto relacionada a turismo dentro de la carpeta images llamada hero-bg.jpg */
+    background-image: url('images/hero-bg.jpg'); 
+    background-color: #cccccc; /* Color de respaldo */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente exigida */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Buscador Visual */
+.buscador {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buscador input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-buscar {
+    background-color: var(--color-acento);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
