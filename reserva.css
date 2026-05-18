@@ -1,0 +1,94 @@
+.contenedor-formulario {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 5%;
+}
+
+.contenedor-formulario h1 {
+    color: var(--color-principal);
+    text-align: center;
+}
+
+.contenedor-formulario p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+fieldset {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+legend {
+    background-color: var(--color-secundario);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.grupo-campo {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-campo label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.grupo-campo input[type="text"],
+.grupo-campo input[type="date"],
+.grupo-campo input[type="number"],
+.grupo-campo select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--fuente-texto);
+}
+
+.opciones-radio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.opciones-radio label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.doble {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .doble {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.checkbox-inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-inline label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.oculto {
+    display: none;
+}

@@ -19,7 +19,9 @@ h1, h2, h3 {
     font-family: var(--fuente-titulos);
 }
 
-/* Barra de Navegación */
+/* =========================================
+   BARRA DE NAVEGACIÓN
+   ========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -55,13 +57,14 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Sección Hero */
+/* =========================================
+   HERO Y BUSCADOR
+   ========================================= */
 .hero {
     position: relative;
     height: 70vh;
-    /* Deberás colocar una foto relacionada a turismo dentro de la carpeta images llamada hero-bg.jpg */
     background-image: url('images/hero-bg.jpg'); 
-    background-color: #cccccc; /* Color de respaldo */
+    background-color: #cccccc; 
     background-size: cover;
     background-position: center;
     display: flex;
@@ -74,7 +77,7 @@ h1, h2, h3 {
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente exigida */
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .hero-content {
@@ -87,7 +90,6 @@ h1, h2, h3 {
     margin-bottom: 10px;
 }
 
-/* Buscador Visual */
 .buscador {
     margin-top: 2rem;
     background: rgba(255, 255, 255, 0.2);
@@ -110,112 +112,13 @@ h1, h2, h3 {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;    // ...existing code...
-    /* Testimonios */
-    .testimonio {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        text-align: left;
-    }
-    
-    . testmonio p {
-        font-style: italic;
-        margin-bottom: 10px;
-    }
-    
-    .estrellas {
-        color: var(--color-secundario);
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-    
-    .testimonio h4 {
-        color: var(--color-principal);
-        margin-top: 15px;
-    }
-    
-    /* Footer */
-    .footer {
-        background-color: #222;
-        color: white;
-        padding: 3rem 5% 1rem 5%;
-    }
-    
-    .footer-contenido {
-        display: grid;
-        gap: 30px;
-        grid-template-columns: 1fr;
-    }
-    
-    @media (min-width: 768px) {
-        .footer-contenido {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-    
-    .footer-columna h2 {
-        color: var(--color-secundario);
-    }
-    
-    .footer-columna h3 {
-        margin-bottom: 15px;
-        color: var(--color-secundario);
-    }
-    
-    .footer-columna ul {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .footer-columna ul li {
-        margin-bottom: 10px;
-    }
-    
-    .footer-columna a {
-        color: #bbb;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-    
-    .footer-columna a:hover {
-        color: white;
-    }
-    
-    .redes {
-        display: flex;
-        gap: 15px;
-    }
-    
-    .redes a {
-        background-color: #444;
-        padding: 10px;
-        border-radius: 5px;
-        color: white;
-        font-weight: bold;
-    }
-    
-    .footer-bottom {
-        text-align: center;
-        margin-top: 3rem;
-        padding-top: 1rem;
-        border-top: 1px solid #444;
-        font-size: 0.9rem;
-        color: #888;
-    }
-    font-weight: bold;
-}// ...existing code...
-.btn-buscar {
-    background-color: var(--color-acento);
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 }
 
-/* --- NUEVOS ESTILOS: SECCIONES Y GRILLAS --- */
+/* =========================================
+   SECCIONES Y GRILLAS
+   ========================================= */
 .seccion {
     padding: 4rem 5%;
     text-align: center;
@@ -231,30 +134,27 @@ h1, h2, h3 {
     margin-bottom: 2rem;
 }
 
-/* Grillas Responsivas (Móvil Primero) */
 .grilla-destinos, .grilla-paquetes {
     display: grid;
     gap: 30px;
     grid-template-columns: 1fr; /* 1 columna en celulares */
 }
 
-/* Media Query: Escritorio (2 a 4 columnas) */
 @media (min-width: 768px) {
-    .grilla-paquetes {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .grilla-destinos {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    .grilla-paquetes { grid-template-columns: repeat(2, 1fr); }
+    .grilla-destinos { grid-template-columns: repeat(4, 1fr); }
+    .footer-contenido { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* Tarjetas de Destinos */
+/* =========================================
+   TARJETAS Y SERVICIOS
+   ========================================= */
 .tarjeta {
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave requerido */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding-bottom: 20px;
 }
 
@@ -296,7 +196,6 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Servicios */
 .servicio {
     background-color: white;
     padding: 2rem;
@@ -307,4 +206,92 @@ h1, h2, h3 {
 .servicio h3 {
     color: var(--color-principal);
     margin-bottom: 10px;
+}
+
+/* =========================================
+   TESTIMONIOS
+   ========================================= */
+.testimonio {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.testimonio p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.estrellas {
+    color: var(--color-secundario);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.testimonio h4 {
+    color: var(--color-principal);
+    margin-top: 15px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 3rem 5% 1rem 5%;
+}
+
+.footer-contenido {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+}
+
+.footer-columna h2, .footer-columna h3 {
+    color: var(--color-secundario);
+    margin-bottom: 15px;
+}
+
+.footer-columna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-columna ul li {
+    margin-bottom: 10px;
+}
+
+.footer-columna a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-columna a:hover {
+    color: white;
+}
+
+.redes {
+    display: flex;
+    gap: 15px;
+}
+
+.redes a {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+    color: #888;
 }
