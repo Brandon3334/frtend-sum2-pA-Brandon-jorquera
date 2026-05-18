@@ -1,5 +1,5 @@
 .contenedor-formulario {
-    max-width: 800px;
+    max-width: 750px;
     margin: 3rem auto;
     padding: 0 5%;
 }
@@ -7,17 +7,23 @@
 .contenedor-formulario h1 {
     color: var(--color-principal);
     text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.contenedor-formulario p {
+.contenedor-formulario > p {
     text-align: center;
     margin-bottom: 2rem;
     color: #555;
+    font-size: 1.1rem;
 }
 
+/* =========================================
+   FIELDSETS Y LEYENDAS
+   ========================================= */
 fieldset {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #f9f9fc;
+    border: 2px solid #ddd;
     border-radius: 8px;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -25,12 +31,16 @@ fieldset {
 
 legend {
     background-color: var(--color-secundario);
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.2rem;
     border-radius: 5px;
     font-weight: bold;
     color: #333;
+    font-size: 1.1rem;
 }
 
+/* =========================================
+   CAMPOS DEL FORMULARIO
+   ========================================= */
 .grupo-campo {
     margin-bottom: 1.5rem;
     display: flex;
@@ -40,32 +50,117 @@ legend {
 .grupo-campo label {
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: #333;
 }
 
 .grupo-campo input[type="text"],
+.grupo-campo input[type="email"],
+.grupo-campo input[type="tel"],
 .grupo-campo input[type="date"],
 .grupo-campo input[type="number"],
-.grupo-campo select {
+.grupo-campo select,
+.grupo-campo textarea {
     padding: 0.8rem;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
     font-family: var(--fuente-texto);
+    transition: all 0.3s ease;
 }
 
+.grupo-campo input[type="text"]:focus,
+.grupo-campo input[type="email"]:focus,
+.grupo-campo input[type="tel"]:focus,
+.grupo-campo input[type="date"]:focus,
+.grupo-campo input[type="number"]:focus,
+.grupo-campo select:focus,
+.grupo-campo textarea:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(0, 91, 159, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    font-family: var(--fuente-texto);
+}
+
+small {
+    display: block;
+    margin-top: 0.3rem;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   OPCIONES RADIO Y CHECKBOX
+   ========================================= */
 .opciones-radio {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    margin-top: 0.5rem;
 }
 
 .opciones-radio label {
     font-weight: normal;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+    margin-bottom: 0;
+    cursor: pointer;
 }
 
+.opciones-radio input[type="radio"],
+.opciones-radio input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.opciones-checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+.opciones-checkbox label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.opciones-checkbox input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-inline input[type="checkbox"] {
+    margin-bottom: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-inline label {
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* =========================================
+   LAYOUTS RESPONSIVOS
+   ========================================= */
 .doble {
     display: grid;
     grid-template-columns: 1fr;
@@ -78,17 +173,168 @@ legend {
     }
 }
 
-.checkbox-inline {
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+/* =========================================
+   VALIDACIÓN Y ESTADOS DE CAMPOS
+   ========================================= */
+input.campo-error,
+select.campo-error,
+textarea.campo-error {
+    border-color: #dc3545;
+    background-color: #f8d7da;
 }
 
-.checkbox-inline label {
-    margin-bottom: 0;
-    font-weight: normal;
+input.campo-ok,
+select.campo-ok,
+textarea.campo-ok {
+    border-color: #28a745;
+    background-color: #d4edda;
 }
 
+/* =========================================
+   ELEMENTOS OCULTOS
+   ========================================= */
 .oculto {
     display: none;
+}
+
+/* =========================================
+   BOTONES DE ACCIÓN
+   ========================================= */
+.botones-accion {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-principal {
+    flex: 1;
+    min-width: 150px;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 91, 159, 0.3);
+}
+
+.btn-principal:hover {
+    background-color: #004180;
+    box-shadow: 0 4px 10px rgba(0, 91, 159, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-principal:active {
+    transform: scale(0.98);
+}
+
+.btn-limpiar {
+    flex: 1;
+    min-width: 150px;
+    background-color: #999;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-limpiar:hover {
+    background-color: #777;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-limpiar:active {
+    transform: scale(0.98);
+}
+
+.btn-volver {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secundario);
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(253, 184, 19, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-volver:hover {
+    background-color: #e6a812;
+    box-shadow: 0 4px 10px rgba(253, 184, 19, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-volver:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   SEPARACIÓN Y ESTRUCTURA VISUAL
+   ========================================= */
+fieldset + fieldset {
+    margin-top: 1.5rem;
+}
+
+fieldset:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   RESPONSIVO - DISPOSITIVOS MÓVILES
+   ========================================= */
+@media (max-width: 600px) {
+    .contenedor-formulario {
+        padding: 0 3%;
+        margin: 1.5rem auto;
+    }
+
+    .contenedor-formulario h1 {
+        font-size: 1.8rem;
+    }
+
+    fieldset {
+        padding: 1.5rem 1rem;
+    }
+
+    legend {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .botones-accion {
+        flex-direction: column;
+    }
+
+    .botones-accion button,
+    .botones-accion a {
+        width: 100%;
+    }
+
+    .opciones-radio {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .grupo-campo.doble {
+        grid-template-columns: 1fr;
+    }
 }
