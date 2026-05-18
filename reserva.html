@@ -107,7 +107,6 @@
                     </select>
                 </div>
                 
-                <!-- Este campo se mostrará con JS más adelante (Etapa 3) si eligen "Otro" -->
                 <div class="grupo-campo oculto" id="caja_otro_puerto">
                     <label for="otro_puerto">Especificar ciudad de salida:</label>
                     <input type="text" id="otro_puerto" name="otro_puerto" placeholder="Ej: Mendoza">
@@ -118,9 +117,10 @@
             <!-- SECCIÓN B: Datos de los Pasajeros -->
             <fieldset>
                 <legend>Sección B - Datos de los Pasajeros</legend>
+                
                 <div class="grupo-campo doble">
                     <div>
-                        <label for="adultos">Cantidad de adultos (Min 1, Max 10):</label>
+                        <label for="adultos">Cantidad de adultos (Min 1, Max 10): *</label>
                         <input type="number" id="adultos" name="adultos" min="1" max="10" value="1" required>
                     </div>
                     <div>
@@ -128,16 +128,171 @@
                         <input type="number" id="menores" name="menores" min="0" max="8" value="0">
                     </div>
                 </div>
+
+                <div class="grupo-campo">
+                    <label for="nombre_pasajero">Nombre completo del pasajero principal: *</label>
+                    <input type="text" id="nombre_pasajero" name="nombre_pasajero" required>
+                </div>
+
+                <div class="grupo-campo doble">
+                    <div>
+                        <label for="pasaporte">Número de pasaporte o DNI: *</label>
+                        <input type="text" id="pasaporte" name="pasaporte" required>
+                    </div>
+                    <div>
+                        <label for="fecha_nacimiento">Fecha de nacimiento: *</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="nacionalidad">Nacionalidad: *</label>
+                    <select id="nacionalidad" name="nacionalidad" required>
+                        <option value="">Selecciona tu nacionalidad...</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="chile">Chile</option>
+                        <option value="uruguay">Uruguay</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="mexico">México</option>
+                        <option value="españa">España</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="email">Correo electrónico: *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="telefono">Teléfono de contacto: *</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label>
+                        <input type="checkbox" id="adultos_mayores" name="adultos_mayores">
+                        Viaja con adultos mayores
+                    </label>
+                    <label for="cantidad_adultos_mayores" class="oculto" id="label_adultos_mayores">Cantidad de adultos mayores:</label>
+                    <input type="number" id="cantidad_adultos_mayores" name="cantidad_adultos_mayores" min="1" class="oculto" placeholder="¿Cuántos adultos mayores?">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="necesidades_especiales">Necesidades especiales (máximo 300 caracteres):</label>
+                    <textarea id="necesidades_especiales" name="necesidades_especiales" maxlength="300" placeholder="Ej: movilidad reducida, alergias, etc." rows="3"></textarea>
+                    <small id="contador_caracteres">0/300</small>
+                </div>
+
             </fieldset>
+
+            <!-- SECCIÓN C: Preferencias y Servicios Adicionales -->
+            <fieldset>
+                <legend>Sección C - Preferencias y Servicios Adicionales</legend>
+
+                <div class="grupo-campo">
+                    <label>Tipo de habitación preferida:</label>
+                    <div class="opciones-radio">
+                        <label><input type="radio" name="tipo_habitacion" value="simple"> Simple</label>
+                        <label><input type="radio" name="tipo_habitacion" value="doble"> Doble</label>
+                        <label><input type="radio" name="tipo_habitacion" value="triple"> Triple</label>
+                        <label><input type="radio" name="tipo_habitacion" value="suite"> Suite</label>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="regimen_comidas">Régimen de comidas:</label>
+                    <select id="regimen_comidas" name="regimen_comidas">
+                        <option value="">Selecciona régimen...</option>
+                        <option value="solo-alojamiento">Solo alojamiento</option>
+                        <option value="desayuno-incluido">Desayuno incluido</option>
+                        <option value="media-pension">Media pensión</option>
+                        <option value="pension-completa">Pensión completa</option>
+                        <option value="todo-incluido">Todo incluido</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Servicios adicionales (selecciona los que desees):</label>
+                    <div class="opciones-checkbox">
+                        <label><input type="checkbox" name="servicios" value="seguro-viaje"> Seguro de viaje</label>
+                        <label><input type="checkbox" name="servicios" value="traslado-aeropuerto"> Traslado aeropuerto</label>
+                        <label><input type="checkbox" name="servicios" value="excursiones"> Excursiones incluidas</label>
+                        <label><input type="checkbox" name="servicios" value="guia-español"> Guía en español</label>
+                        <label><input type="checkbox" name="servicios" value="visa"> Visa incluida</label>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="presupuesto">Presupuesto estimado por persona (USD):</label>
+                    <select id="presupuesto" name="presupuesto">
+                        <option value="">Selecciona rango...</option>
+                        <option value="menos-500">Menos de USD 500</option>
+                        <option value="500-1000">USD 500 a 1000</option>
+                        <option value="1000-2500">USD 1000 a 2500</option>
+                        <option value="2500-5000">USD 2500 a 5000</option>
+                        <option value="sin-limite">Sin límite definido</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="como_conocio">¿Cómo se enteró de ViajarYa?</label>
+                    <select id="como_conocio" name="como_conocio">
+                        <option value="">Selecciona...</option>
+                        <option value="redes-sociales">Redes sociales</option>
+                        <option value="recomendacion">Recomendación</option>
+                        <option value="busqueda-web">Búsqueda web</option>
+                        <option value="publicidad">Publicidad</option>
+                        <option value="ya-cliente">Ya soy cliente</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <!-- SECCIÓN D: Comentarios y Confirmación -->
+            <fieldset>
+                <legend>Sección D - Comentarios y Confirmación</legend>
+
+                <div class="grupo-campo">
+                    <label for="comentarios">Comentarios o pedidos especiales (máximo 300 caracteres):</label>
+                    <textarea id="comentarios" name="comentarios" maxlength="300" placeholder="Cuéntanos si tienes algún pedido especial..." rows="4"></textarea>
+                    <small id="contador_comentarios">0/300</small>
+                </div>
+
+                <div class="grupo-campo checkbox-inline">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los Términos y Condiciones *</label>
+                </div>
+
+                <div class="grupo-campo checkbox-inline">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <label for="privacidad">Acepto la Política de Privacidad y el tratamiento de datos personales *</label>
+                </div>
+
+                <div class="grupo-campo checkbox-inline">
+                    <input type="checkbox" id="ofertas" name="ofertas">
+                    <label for="ofertas">Deseo recibir ofertas por correo electrónico</label>
+                </div>
+
+            </fieldset>
+
+            <!-- Botones de Acción -->
+            <div class="botones-accion">
+                <button type="submit" class="btn-principal">Solicitar Reserva</button>
+                <button type="reset" class="btn-limpiar">Limpiar</button>
+                <a href="index.html" class="btn-volver">Volver al Inicio</a>
+            </div>
 
         </form>
     </main>
 
-    <!-- Footer replicado para mantener diseño -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-bottom">
             <p>&copy; 2026 ViajarYa - Agencia de Turismo. Todos los derechos reservados.</p>
         </div>
     </footer>
+
 </body>
 </html>
